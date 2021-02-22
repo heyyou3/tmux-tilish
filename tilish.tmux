@@ -196,13 +196,13 @@ tmux $bind "${mod}r" \
 # Close a window with Alt + Shift + c.
 if [ -z "$legacy" ]
 then
-	tmux $bind "${mod}C" \
+	tmux $bind "${mod}c" \
 		if-shell \
 			'[ "$(tmux display-message -p "#{window_panes}")" -gt 1 ]' \
 			'kill-pane; select-layout; select-layout -E' \
 			'kill-pane'
 else
-	tmux $bind "${mod}C" \
+	tmux $bind "${mod}c" \
 		kill-pane
 fi
 
